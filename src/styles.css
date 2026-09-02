@@ -122,18 +122,40 @@ button { cursor: pointer; font-family: inherit; }
   color: var(--color-text-muted);
 }
 
-/* ===== Job Card ===== */
-.job-card {
+.text-center { text-align: center; margin-bottom: 20px; }
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .jobs-grid { grid-template-columns: 1fr; }
+}
+.accent { color: var(--color-blue); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.step-card {
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
-.job-card-institution { color: var(--color-blue); font-weight: 600; }
-.job-card-blurb { color: var(--color-text-muted); font-size: 0.92rem; }
-.job-card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.job-card-actions { display: flex; gap: 10px; margin-top: 6px; }
+
+.step-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+}
