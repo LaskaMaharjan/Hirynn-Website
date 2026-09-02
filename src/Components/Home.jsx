@@ -69,6 +69,37 @@ export default function Home() {
       </section>
 
       <section className="container">
+        <h2 className="text-center">We always help to help you with!</h2>
+
+        <div className="help-grid">
+          <div className="help-list">
+            <div className="help-item">
+              <div className="help-icon">📈</div>
+              <div>
+                <h3>Enhance your career</h3>
+                <p className="text-muted">Hirynn helps you discover the right opportunities, connect with trusted institutions, and grow as a professional.</p>
+              </div>
+            </div>
+            <div className="help-item">
+              <div className="help-icon">💬</div>
+              <div>
+                <h3>Communication</h3>
+                <p className="text-muted">Hirynn connects educators with the right opportunities to achieve success.</p>
+              </div>
+            </div>
+            <div className="help-item">
+              <div className="help-icon">✅</div>
+              <div>
+                <h3>Smart Jobs</h3>
+                <p className="text-muted">Hirynn helps you discover opportunities tailored to your skills and aspirations for long-term career growth.</p>
+              </div>
+            </div>
+          </div>
+          <div className="help-art">🤝</div>
+        </div>
+      </section>
+
+      <section className="container">
         <h2 className="text-center">Recommended Jobs</h2>
         <div className="jobs-grid">
           {jobs.map((job) => (

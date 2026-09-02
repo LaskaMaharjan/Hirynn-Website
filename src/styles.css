@@ -159,3 +159,44 @@ button { cursor: pointer; font-family: inherit; }
 @media (max-width: 900px) {
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
+.help-grid {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.help-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.help-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+.help-icon { font-size: 1.4rem; }
+
+.help-art {
+  flex: 1;
+  background: var(--color-blue-light);
+  border-radius: var(--radius-md);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+@media (max-width: 900px) {
+  .help-grid { flex-direction: column; }
+}
