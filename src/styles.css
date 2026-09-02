@@ -110,6 +110,18 @@ button { cursor: pointer; font-family: inherit; }
   color: var(--color-text-muted);
 }
 
+/* ===== Pill / tag ===== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
 /* ===== Job Card ===== */
 .job-card {
   background: #fff;
