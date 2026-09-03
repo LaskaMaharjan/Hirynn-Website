@@ -99,6 +99,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="container promo">
+        <div className="promo-art">💻</div>
+        <div>
+          <h2><span className="accent">500+</span> Nepal's Best Teaching Institutes Posted Their Jobs!</h2>
+          <p className="text-muted">Explore opportunities posted by 500+ of Nepal's finest teaching institutions and advance your career.</p>
+          <Link to="/jobs" className="btn btn-primary">Search Now</Link>
+        </div>
+      </section>
+
       <section className="container">
         <h2 className="text-center">Recommended Jobs</h2>
         <div className="jobs-grid">
@@ -106,6 +115,14 @@ export default function Home() {
             <JobCard key={job.id} job={job} />
           ))}
         </div>
+      </section>
+
+      <section className="container testimonial">
+        <h2 className="text-center">What Our <span className="accent">Users</span> Say?</h2>
+        <p className="testimonial-quote">"Hirynn made job hunting so simple. I found a position that matched my skills in just a few days. The process was smooth and stress-free."</p>
+        <div className="testimonial-avatar"></div>
+        <p className="testimonial-name">Anita Shrestha</p>
+        <p className="text-muted">Secondary Teacher</p>
       </section>
     </div>
   );
