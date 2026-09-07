@@ -124,6 +124,26 @@ export default function Home() {
         <p className="testimonial-name">Anita Shrestha</p>
         <p className="text-muted">Secondary Teacher</p>
       </section>
+
+      <section className="container app-promo">
+        <div className="app-art">📱</div>
+        <div>
+          <h2>Unlock Your Teaching Potential</h2>
+          <p className="text-muted">
+            Hirynn App is designed for teachers and educational institutions
+            in Nepal to connect with the best opportunities. Discover
+            teaching jobs, apply easily, and access career resources to grow
+            professionally.
+          </p>
+          <strong>We Also Have an App</strong>
+          <p className="text-muted">
+            Use Hirynn on your Android device to explore job postings, apply
+            to your favorite schools, and stay updated with career
+            resources anytime, anywhere.
+          </p>
+          <div className="app-badge">▶ GET IT ON Google Play</div>
+        </div>
+      </section>
     </div>
   );
 }
