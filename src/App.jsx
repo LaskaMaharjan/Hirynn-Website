@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/Footer.jsx";
 import Home from "./Components/Home.jsx";
 import Jobs from "./Components/Jobs.jsx";
+import JobDetail from "./Components/JobDetail.jsx";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/:id" element={<JobDetail />} />
       </Routes>
       <Footer />
     </>
