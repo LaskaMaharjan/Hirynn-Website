@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function JobCard({ job }) {
   return (
     <div className="job-card">
@@ -12,7 +14,7 @@ export default function JobCard({ job }) {
       </div>
 
       <div className="job-card-actions">
-        <button className="btn btn-outline">View Details</button>
+        <Link to={`/jobs/${job.id}`} className="btn btn-outline">View Details</Link>
         <button className="btn btn-primary">Apply Now</button>
       </div>
     </div>
