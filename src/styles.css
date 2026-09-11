@@ -502,3 +502,26 @@ button { cursor: pointer; font-family: inherit; }
   .about-hero { flex-direction: column; }
   .about-stats, .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* ===== Post a Job ===== */
+.post-job-card {
+  max-width: 800px;
+  margin: 30px auto 0;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+.section-heading {
+  margin: 26px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post-job-card select {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
