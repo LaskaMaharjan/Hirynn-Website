@@ -5,6 +5,7 @@ import Home from "./Components/Home.jsx";
 import Jobs from "./Components/Jobs.jsx";
 import JobDetail from "./Components/JobDetail.jsx";
 import ContactUs from "./Components/ContactUs.jsx";
+import AboutUs from "./Components/AboutUs.jsx";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/jobs/:id" element={<JobDetail />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />
     </>
