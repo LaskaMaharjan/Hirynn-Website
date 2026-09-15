@@ -1,4 +1,8 @@
 export default function JobDetail() {
+  const handleApply = () => {
+    alert("Application submitted! (demo only)");
+  };
+
   return (
     <div className="page container">
       <p className="back-link">← Back to jobs</p>
@@ -13,7 +17,7 @@ export default function JobDetail() {
             <span className="pill">🕒 Full-Time</span>
           </div>
         </div>
-        <button className="btn btn-primary">Apply Now</button>
+        <button className="btn btn-primary" onClick={handleApply}>Apply Now</button>
       </div>
 
       <div className="job-detail-body">
