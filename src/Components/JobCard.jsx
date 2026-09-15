@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 export default function JobCard({ job }) {
+  const handleApply = () => {
+    alert(`Application submitted for ${job.title} at ${job.institution}! (demo only)`);
+  };
+
   return (
     <div className="job-card">
       <h3>{job.title}</h3>
@@ -15,7 +19,7 @@ export default function JobCard({ job }) {
 
       <div className="job-card-actions">
         <Link to={`/jobs/${job.id}`} className="btn btn-outline">View Details</Link>
-        <button className="btn btn-primary">Apply Now</button>
+        <button className="btn btn-primary" onClick={handleApply}>Apply Now</button>
       </div>
     </div>
   );
