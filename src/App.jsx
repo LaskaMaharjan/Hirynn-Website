@@ -8,6 +8,7 @@ import ContactUs from "./Components/ContactUs.jsx";
 import AboutUs from "./Components/AboutUs.jsx";
 import PostJob from "./Components/PostJob.jsx";
 import Profile from "./Components/Profile.jsx";
+import Applications from "./Components/Applications.jsx";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/post-a-job" element={<PostJob />} />
         <Route path="/my-profile" element={<Profile />} />
+        <Route path="/my-applications" element={<Applications />} />
       </Routes>
       <Footer />
     </>

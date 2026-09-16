@@ -585,3 +585,38 @@ button { cursor: pointer; font-family: inherit; }
 @media (max-width: 900px) {
   .profile-layout { grid-template-columns: 1fr; }
 }
+/* ===== My Applications ===== */
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.application-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+}
+
+.application-row h3 { margin-bottom: 6px; }
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.status-review { background: #f7edb1; color: #7a6a10; }
+.status-interview { background: #cfe3f5; color: #1f4665; }
+.status-rejected { background: #f6c9c9; color: #8a2222; }
+.status-offer { background: #c9f0c9; color: #1e6b21; }
