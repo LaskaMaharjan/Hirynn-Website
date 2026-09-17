@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import JobCard from "./JobCard.jsx";
+import heroImage from "../assets/hero-illustration.png";
+import helpImage from "../assets/help-illustration.svg";
 
 const jobs = [
   {
@@ -13,6 +15,15 @@ const jobs = [
   },
   {
     id: 2,
+    title: "High School Mathematics Teacher",
+    institution: "Tulips Academy",
+    blurb: "Seeking a passionate mathematics teacher for our dynamic high school environment.",
+    subject: "Mathematics",
+    location: "Harisiddhi, Lalitpur",
+    type: "Full-Time",
+  },
+  {
+    id: 3,
     title: "High School Mathematics Teacher",
     institution: "Tulips Academy",
     blurb: "Seeking a passionate mathematics teacher for our dynamic high school environment.",
@@ -37,7 +48,9 @@ export default function Home() {
             <Link to="/jobs" className="btn btn-outline">Find Jobs</Link>
           </div>
         </div>
-        <div className="hero-art">🧑‍🏫</div>
+        <div className="hero-art">
+          <img src={heroImage} alt="Online learning illustration" />
+        </div>
       </section>
 
       <section className="container">
@@ -45,22 +58,22 @@ export default function Home() {
         <h2 className="text-center">Follow <span className="accent">Easy</span> 4 Steps</h2>
 
         <div className="steps-grid">
-          <div className="step-card">
+          <div className="step-card step-1">
             <div className="step-icon">👤</div>
             <h3>Account</h3>
             <p className="text-muted">You have to create an account here with the details and they must be true to get the jobs quickly and works effectively.</p>
           </div>
-          <div className="step-card">
+          <div className="step-card step-2">
             <div className="step-icon">🔍</div>
             <h3>Search Job</h3>
             <p className="text-muted">Search the job according to your interests and experiences and that matches the requirements for the job.</p>
           </div>
-          <div className="step-card">
+          <div className="step-card step-3">
             <div className="step-icon">📄</div>
             <h3>CV/Resume</h3>
             <p className="text-muted">Now you have to fill the given job applications with your recent CV/Resume where you are interested and will help you grow.</p>
           </div>
-          <div className="step-card">
+          <div className="step-card step-4">
             <div className="step-icon">✅</div>
             <h3>Apply</h3>
             <p className="text-muted">Apply to the job applications and make sure to check the location and time to not face problems later.</p>
@@ -69,7 +82,7 @@ export default function Home() {
       </section>
 
       <section className="container">
-        <h2 className="text-center">We always help to help you with!</h2>
+        <h2>We always help to help you with!</h2>
 
         <div className="help-grid">
           <div className="help-list">
@@ -95,7 +108,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="help-art">🤝</div>
+          <div className="help-art">
+            <img src={helpImage} alt="Discussion illustration" />
+          </div>
         </div>
       </section>
 
