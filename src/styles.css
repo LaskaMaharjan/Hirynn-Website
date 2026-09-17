@@ -620,3 +620,14 @@ button { cursor: pointer; font-family: inherit; }
 .status-interview { background: #cfe3f5; color: #1f4665; }
 .status-rejected { background: #f6c9c9; color: #8a2222; }
 .status-offer { background: #c9f0c9; color: #1e6b21; }
+
+/* ===== Solid pill (matches mockup job tags) ===== */
+.pill-solid {
+  display: inline-block;
+  background: var(--color-navy);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
