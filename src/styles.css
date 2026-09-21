@@ -652,3 +652,31 @@ button { cursor: pointer; font-family: inherit; }
 .status-interview { background: #cfe3f5; color: #1f4665; }
 .status-rejected { background: #f6c9c9; color: #8a2222; }
 .status-offer { background: #c9f0c9; color: #1e6b21; }
+
+/* ===== Login / Register ===== */
+.auth-card {
+  max-width: 420px;
+  margin: 40px auto 0;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+.auth-card h1 {
+  margin-bottom: 6px;
+}
+
+.auth-card p {
+  margin-bottom: 24px;
+}
+
+.auth-switch {
+  margin-top: 18px;
+}
+
+.auth-link {
+  color: var(--color-navy);
+  font-weight: 600;
+}

@@ -38,8 +38,8 @@ export default function Navbar({ loggedIn = true }) {
           </Link>
         ) : (
           <div className="navbar-auth">
-            <button className="btn btn-outline">Login</button>
-            <button className="btn btn-primary">Register</button>
+            <Link to="/login" className="btn btn-outline">Login</Link>
+            <Link to="/register" className="btn btn-primary">Register</Link>
           </div>
         )}
       </div>

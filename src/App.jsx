@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/Footer.jsx";
@@ -10,11 +11,15 @@ import PostJob from "./Components/PostJob.jsx";
 import Profile from "./Components/Profile.jsx";
 import Applications from "./Components/Applications.jsx";
 import SavedJobs from "./Components/SavedJobs.jsx";
+import Login from "./Components/Login.jsx";
+import Register from "./Components/Register.jsx";
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar loggedIn={loggedIn} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -25,6 +30,8 @@ export default function App() {
         <Route path="/my-profile" element={<Profile />} />
         <Route path="/my-applications" element={<Applications />} />
         <Route path="/saved-jobs" element={<SavedJobs />} />
+        <Route path="/login" element={<Login onLogin={() => setLoggedIn(true)} />} />
+        <Route path="/register" element={<Register onLogin={() => setLoggedIn(true)} />} />
       </Routes>
       <Footer />
     </>

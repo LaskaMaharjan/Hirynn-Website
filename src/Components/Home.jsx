@@ -49,7 +49,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art">
-          <img src={heroImage} alt="Online learning illustration" />
+          <img src={heroImage} alt="hero-llustration.png" />
         </div>
       </section>
 
