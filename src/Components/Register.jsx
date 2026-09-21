@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Register({ onLogin }) {
-  const [name, setName] = useState("");
+  const [role, setRole] = useState("teacher");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [orgName, setOrgName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -20,15 +23,56 @@ export default function Register({ onLogin }) {
         <p className="text-center text-muted">Join Hirynn as a teacher or institution</p>
 
         <form onSubmit={handleSubmit}>
-          <div className="field">
-            <label>Full Name</label>
-            <input
-              placeholder="Enter your full name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+          <label className="field-label">I am a:</label>
+          <div className="role-toggle">
+            <button
+              type="button"
+              className={role === "teacher" ? "role-btn active" : "role-btn"}
+              onClick={() => setRole("teacher")}
+            >
+              Teacher
+            </button>
+            <button
+              type="button"
+              className={role === "institution" ? "role-btn active" : "role-btn"}
+              onClick={() => setRole("institution")}
+            >
+              Institution
+            </button>
           </div>
+
+          {role === "teacher" ? (
+            <div className="form-row">
+              <div className="field">
+                <label>First Name</label>
+                <input
+                  placeholder="First name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="field">
+                <label>Last Name</label>
+                <input
+                  placeholder="Last name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="field">
+              <label>Organization Name</label>
+              <input
+                placeholder="Organization name"
+                value={orgName}
+                onChange={(e) => setOrgName(e.target.value)}
+                required
+              />
+            </div>
+          )}
 
           <div className="field">
             <label>Email</label>
