@@ -8,10 +8,15 @@ export default function Register({ onLogin }) {
   const [orgName, setOrgName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!agreed) return;
     onLogin();
     navigate("/");
   };
@@ -87,22 +92,57 @@ export default function Register({ onLogin }) {
 
           <div className="field">
             <label>Password</label>
-            <input
-              type="password"
-              placeholder="Create a password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className="password-wrap">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Create your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button type="button" className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? "🙈" : "👁"}
+              </button>
+            </div>
           </div>
 
-          <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
-            Register
+          <div className="field">
+            <label>Confirm Password</label>
+            <div className="password-wrap">
+              <input
+                type={showConfirm ? "text" : "password"}
+                placeholder="Confirm your password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+              <button type="button" className="password-toggle" onClick={() => setShowConfirm(!showConfirm)}>
+                {showConfirm ? "🙈" : "👁"}
+              </button>
+            </div>
+          </div>
+
+          <label className="checkbox-row">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+            />
+            I agree to the Terms of Service and Privacy Policy
+          </label>
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ width: "100%" }}
+            disabled={!agreed}
+          >
+            Create Account
           </button>
         </form>
 
         <p className="text-center text-muted auth-switch">
-          Already have an account? <Link to="/login" className="auth-link">Login</Link>
+          Already have an account? <Link to="/login" className="auth-link">Sign in here!</Link>
         </p>
       </div>
     </div>

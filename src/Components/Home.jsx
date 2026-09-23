@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import JobCard from "./JobCard.jsx";
 import heroImage from "../assets/hero-illustration.png";
@@ -33,7 +34,34 @@ const jobs = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: "Hirynn made job hunting so simple. I found a position that matched my skills in just a few days. The process was smooth and stress-free.",
+    name: "Anita Shrestha",
+    role: "Secondary Teacher",
+  },
+  {
+    quote: "As a school administrator, posting jobs on Hirynn saved us weeks of searching. We found qualified teachers within days.",
+    name: "Rajesh Thapa",
+    role: "Principal, Euro School",
+  },
+  {
+    quote: "The platform is intuitive and the application tracking feature kept me informed throughout my job search journey.",
+    name: "Priya Gurung",
+    role: "Primary Teacher",
+  },
+];
+
 export default function Home() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="page">
       <section className="container hero">
@@ -49,7 +77,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art">
-          <img src={heroImage} alt="hero-llustration.png" />
+          <img src={heroImage} alt="Online learning illustration" />
         </div>
       </section>
 
@@ -134,10 +162,20 @@ export default function Home() {
 
       <section className="container testimonial">
         <h2 className="text-center">What Our <span className="accent">Users</span> Say?</h2>
-        <p className="testimonial-quote">"Hirynn made job hunting so simple. I found a position that matched my skills in just a few days. The process was smooth and stress-free."</p>
+        <p className="testimonial-quote">"{testimonials[current].quote}"</p>
         <div className="testimonial-avatar"></div>
-        <p className="testimonial-name">Anita Shrestha</p>
-        <p className="text-muted">Secondary Teacher</p>
+        <p className="testimonial-name">{testimonials[current].name}</p>
+        <p className="text-muted">{testimonials[current].role}</p>
+
+        <div className="carousel-dots">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              className={i === current ? "dot active" : "dot"}
+              onClick={() => setCurrent(i)}
+            />
+          ))}
+        </div>
       </section>
 
       <section className="container app-promo">
