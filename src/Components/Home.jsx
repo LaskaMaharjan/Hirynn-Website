@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import JobCard from "./JobCard.jsx";
 import heroImage from "../assets/hero-illustration.png";
 import helpImage from "../assets/help-illustration.svg";
+import appMockup from "../assets/app-mockup.png";
+import loginIllustration from "../assets/login-illustration.png";
 
 const jobs = [
   { id: 1, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
@@ -122,7 +124,9 @@ export default function Home() {
       </section>
 
       <section className="container promo">
-        <div className="promo-art">💻</div>
+        <div className="promo-art">
+          <img src={loginIllustration} alt="Login illustration" />
+        </div>
         <div>
           <h2><span className="accent">500+</span> Nepal's Best Teaching Institutes Posted Their Jobs!</h2>
           <p className="text-muted">Explore opportunities posted by 500+ of Nepal's finest teaching institutions and advance your career.</p>
@@ -158,7 +162,9 @@ export default function Home() {
       </section>
 
       <section className="container app-promo">
-        <div className="app-art">📱</div>
+        <div className="app-art">
+          <img src={appMockup} alt="Hirynn mobile app screens" />
+        </div>
         <div>
           <h2>Unlock Your Teaching Potential</h2>
           <p className="text-muted">

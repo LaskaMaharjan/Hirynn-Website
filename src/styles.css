@@ -198,9 +198,10 @@ button { cursor: pointer; font-family: inherit; }
 
 .help-list {
   flex: 1;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .help-item {
@@ -244,13 +245,16 @@ button { cursor: pointer; font-family: inherit; }
 
 .promo-art {
   flex: 1;
-  background: var(--color-blue-light);
-  border-radius: var(--radius-md);
+  background: transparent;
   min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+}
+
+.promo-art img {
+  max-width: 100%;
+  height: auto;
 }
 
 .promo > div:last-child {
@@ -327,13 +331,16 @@ button { cursor: pointer; font-family: inherit; }
 
 .app-art {
   flex: 1;
-  background: var(--color-blue-light);
-  border-radius: var(--radius-md);
+  background: transparent;
   min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+}
+
+.app-art img {
+  max-width: 100%;
+  height: auto;
 }
 
 .app-promo > div:last-child {
