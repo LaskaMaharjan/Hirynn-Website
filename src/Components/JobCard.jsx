@@ -7,8 +7,8 @@ export default function JobCard({ job }) {
 
   return (
     <div className="job-card">
-      <h3>⚙️ {job.title}</h3>
-      <p className="job-card-institution">{job.institution}, Nepal</p>
+      <h3>⚛️ {job.title}</h3>
+      <p className="job-card-institution">{job.institution}  {job.location}</p>
 
       <div className="job-card-tags">
         <span className="pill-solid">Full Time</span>

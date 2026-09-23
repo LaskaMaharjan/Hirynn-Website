@@ -5,33 +5,12 @@ import heroImage from "../assets/hero-illustration.png";
 import helpImage from "../assets/help-illustration.svg";
 
 const jobs = [
-  {
-    id: 1,
-    title: "High School Mathematics Teacher",
-    institution: "Tulips Academy",
-    blurb: "Seeking a passionate mathematics teacher for our dynamic high school environment.",
-    subject: "Mathematics",
-    location: "Harisiddhi, Lalitpur",
-    type: "Full-Time",
-  },
-  {
-    id: 2,
-    title: "High School Mathematics Teacher",
-    institution: "Tulips Academy",
-    blurb: "Seeking a passionate mathematics teacher for our dynamic high school environment.",
-    subject: "Mathematics",
-    location: "Harisiddhi, Lalitpur",
-    type: "Full-Time",
-  },
-  {
-    id: 3,
-    title: "High School Mathematics Teacher",
-    institution: "Tulips Academy",
-    blurb: "Seeking a passionate mathematics teacher for our dynamic high school environment.",
-    subject: "Mathematics",
-    location: "Harisiddhi, Lalitpur",
-    type: "Full-Time",
-  },
+  { id: 1, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
+  { id: 2, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
+  { id: 3, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
+  { id: 4, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
+  { id: 5, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
+  { id: 6, title: "Mathematics Teacher", institution: "Tulips School", location: "Biratnagar, Nepal" },
 ];
 
 const testimonials = [
