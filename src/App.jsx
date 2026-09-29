@@ -1,5 +1,5 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/Footer.jsx";
 import Home from "./Components/Home.jsx";
@@ -16,10 +16,14 @@ import Register from "./Components/Register.jsx";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const location = useLocation();
+
+  const hideChrome = location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <>
-      <Navbar loggedIn={loggedIn} />
+      {!hideChrome && <Navbar loggedIn={loggedIn} />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -33,7 +37,8 @@ export default function App() {
         <Route path="/login" element={<Login onLogin={() => setLoggedIn(true)} />} />
         <Route path="/register" element={<Register onLogin={() => setLoggedIn(true)} />} />
       </Routes>
-      <Footer />
+
+      {!hideChrome && <Footer />}
     </>
   );
 }

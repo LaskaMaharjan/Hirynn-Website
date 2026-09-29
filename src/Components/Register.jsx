@@ -12,55 +12,56 @@ export default function Register({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [agreed, setAgreed] = useState(false);
+
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    if (!agreed) return;
     onLogin();
     navigate("/");
-  };
+  }
 
   return (
-    <div className="page container">
+    <div className="auth-page">
       <div className="auth-card">
-        <h1 className="text-center">Create Account</h1>
-        <p className="text-center text-muted">Join Hirynn as a teacher or institution</p>
+        <h2>Create Account</h2>
+        <p className="auth-sub">Join Hirynn and get started</p>
+
+        <div className="role-toggle">
+          <button
+            type="button"
+            className={`role-btn ${role === "teacher" ? "active" : ""}`}
+            onClick={() => setRole("teacher")}
+          >
+            Teacher
+          </button>
+          <button
+            type="button"
+            className={`role-btn ${role === "institution" ? "active" : ""}`}
+            onClick={() => setRole("institution")}
+          >
+            Institution
+          </button>
+        </div>
 
         <form onSubmit={handleSubmit}>
-          <label className="field-label">I am a:</label>
-          <div className="role-toggle">
-            <button
-              type="button"
-              className={role === "teacher" ? "role-btn active" : "role-btn"}
-              onClick={() => setRole("teacher")}
-            >
-              Teacher
-            </button>
-            <button
-              type="button"
-              className={role === "institution" ? "role-btn active" : "role-btn"}
-              onClick={() => setRole("institution")}
-            >
-              Institution
-            </button>
-          </div>
-
           {role === "teacher" ? (
             <div className="form-row">
-              <div className="field">
-                <label>First Name</label>
+              <div>
+                <label className="field-label">First Name</label>
                 <input
-                  placeholder="First name"
+                  type="text"
+                  placeholder="Enter first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
                 />
               </div>
-              <div className="field">
-                <label>Last Name</label>
+              <div>
+                <label className="field-label">Last Name</label>
                 <input
-                  placeholder="Last name"
+                  type="text"
+                  placeholder="Enter last name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   required
@@ -68,10 +69,11 @@ export default function Register({ onLogin }) {
               </div>
             </div>
           ) : (
-            <div className="field">
-              <label>Organization Name</label>
+            <div>
+              <label className="field-label">Organization Name</label>
               <input
-                placeholder="Organization name"
+                type="text"
+                placeholder="Enter organization name"
                 value={orgName}
                 onChange={(e) => setOrgName(e.target.value)}
                 required
@@ -79,70 +81,81 @@ export default function Register({ onLogin }) {
             </div>
           )}
 
-          <div className="field">
-            <label>Email</label>
+          <label className="field-label" style={{ marginTop: "14px" }}>
+            Email
+          </label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <label className="field-label" style={{ marginTop: "14px" }}>
+            Password
+          </label>
+          <div className="password-wrap">
             <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? "🙈" : "👁️"}
+            </button>
           </div>
 
-          <div className="field">
-            <label>Password</label>
-            <div className="password-wrap">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Create your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <button type="button" className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? "🙈" : "👁"}
-              </button>
-            </div>
+          <label className="field-label" style={{ marginTop: "14px" }}>
+            Confirm Password
+          </label>
+          <div className="password-wrap">
+            <input
+              type={showConfirm ? "text" : "password"}
+              placeholder="Re-enter your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowConfirm(!showConfirm)}
+            >
+              {showConfirm ? "🙈" : "👁️"}
+            </button>
           </div>
 
-          <div className="field">
-            <label>Confirm Password</label>
-            <div className="password-wrap">
-              <input
-                type={showConfirm ? "text" : "password"}
-                placeholder="Confirm your password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-              <button type="button" className="password-toggle" onClick={() => setShowConfirm(!showConfirm)}>
-                {showConfirm ? "🙈" : "👁"}
-              </button>
-            </div>
-          </div>
-
-          <label className="checkbox-row">
+          <div className="checkbox-row" style={{ marginTop: "16px" }}>
             <input
               type="checkbox"
               checked={agreed}
               onChange={(e) => setAgreed(e.target.checked)}
+              id="agree"
             />
-            I agree to the Terms of Service and Privacy Policy
-          </label>
+            <label htmlFor="agree">
+              I agree to the Terms of Service and Privacy Policy
+            </label>
+          </div>
 
           <button
             type="submit"
-            className="btn btn-primary"
-            style={{ width: "100%" }}
+            className="btn btn-primary btn-block"
+            style={{ marginTop: "18px" }}
             disabled={!agreed}
           >
             Create Account
           </button>
         </form>
 
-        <p className="text-center text-muted auth-switch">
-          Already have an account? <Link to="/login" className="auth-link">Sign in here!</Link>
+        <p className="auth-switch">
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
