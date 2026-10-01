@@ -515,11 +515,23 @@ input, textarea, select { font-family: inherit; font-size: 0.95rem; }
 }
 
 /* ===== About Us page ===== */
+.text-muted { color: var(--color-text-muted); }
+
 .about-hero { display: flex; align-items: center; gap: 40px; padding: 50px 0; }
-.about-hero-text { flex: 1; }
-.about-hero-art { flex: 1; display: flex; align-items: center; justify-content: center; }
+.about-hero-quote { max-width: 520px; margin-top: 14px; font-style: italic; }
+.about-hero-art {
+  flex: 1;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: var(--color-blue-light);
+  border-radius: var(--radius-md);
+}
 .about-hero-art img { width: 100%; max-width: 380px; object-fit: contain; }
-.about-intro { max-width: 720px; margin: 0 auto 40px; text-align: center; color: var(--color-text-muted); }
+
+.about-intro { max-width: 720px; margin: 20px auto 40px; text-align: center; }
 
 .about-stats {
   display: grid;
@@ -528,19 +540,20 @@ input, textarea, select { font-family: inherit; font-size: 0.95rem; }
   text-align: center;
   margin: 40px 0;
 }
-.about-stat-num { font-family: var(--font-serif); font-size: 2rem; color: var(--color-navy); font-weight: 700; }
-.about-stat-label { color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px; }
+.about-stat-value { font-family: var(--font-serif); font-size: 2rem; color: var(--color-navy); font-weight: 700; margin-bottom: 4px; }
 
-.about-team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 20px; }
+.about-team { margin-top: 50px; }
+.about-team h2 { margin-bottom: 20px; }
+
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .team-card { text-align: center; }
 .team-avatar { width: 90px; height: 90px; border-radius: 50%; background: var(--color-blue-light); margin: 0 auto 12px; }
-.team-card strong { display: block; }
-.team-card span { color: var(--color-text-muted); font-size: 0.85rem; }
+.team-card strong { display: block; margin-bottom: 4px; }
 
 @media (max-width: 900px) {
   .about-hero { flex-direction: column; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
-  .about-team { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ===== Post a Job page ===== */
