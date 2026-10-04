@@ -198,7 +198,7 @@ input, textarea, select {
 
 .hero-art {
   flex: 1;
-  background: #eaf2f8;
+  /* background: #eaf2f8; */
   border-radius: 10px;
   min-height: 260px;
   display: flex;
@@ -558,7 +558,7 @@ input.jobs-search {
 }
 .app-art {
   flex: 1;
-  background: #eaf2f8;
+  /* background: #eaf2f8; */
   border-radius: 10px;
   min-height: 220px;
   display: flex;
